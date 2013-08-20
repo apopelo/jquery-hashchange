@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Hashchange</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        <script src="../dist/jquery.hashchange.js"></script>
+
+        <style type="text/css">
+            #login-form {
+                width: 250px;
+                background: #eee;
+                padding: 10px 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            $(function() {
+                /*
+
+                Code below means:
+
+                    1. Call onSet() callback each time when url changes to
+                       http://.../#!/login/
+                    2. Call onRemove() callback each time when url changes from
+                       http://.../#!/login/ to anything else, e.g.
+                       http://.../#!/
+
+                */
+                $(window).hashchange({
+                    hash: "#!/login/",
+                    onSet: function() {
+                        $("#login-form").show();
+                    },
+                    onRemove: function() {
+                        $("#login-form").hide();
+                    },
+                });
+
+                // Attach multiple callbacks to different hashes
+                $(window).hashchange([{
+                    hash: "#!/test1/",
+                    onSet: function() {
+                        alert("#!/test1/ was set");
+                    },
+                    onRemove: function() {
+                        alert("#!/test1/ was removed");
+                    },
+                }, {
+                    hash: "#!/test2/",
+                    onSet: function() {
+                        alert("#!/test2/ was set");
+                    },
+                }]);
+            });
+        </script>
+
+        <p>
+            <a href="#!/login/">Show login form</a>
+            <a href="#!/">Hide login form</a>
+
+            <a href="#!/test1/">Go to #!/test1/</a>
+            <a href="#!/test2/">Go to #!/test2/</a>
+        </p>
+
+        <p><small>You can also trigger all events manually by just changing the page url.</small></p>
+
+        <form id="login-form" action="." style="display: none;">
+            <p>
+                <label for="username">Username</label>
+                <input id="username" type="text">
+            </p>
+            <p>
+                <label for="password">Password</label>
+                <input id="password" type="password">
+            </p>
+            <p>
+                <input type="submit" value="Sign in">
+            </p>
+        </form>
+    </body>
+</html>

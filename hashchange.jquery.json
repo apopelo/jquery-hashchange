@@ -1,0 +1,36 @@
+{
+    "name": "hashchange",
+    "title": "jQuery Boilerplate",
+    "description": "A jump-start for jQuery plugins development.",
+    "keywords": [
+        "jquery",
+        "hashchange",
+        "plugins"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "Andrey Popelo",
+        "email": "andrey@popelo.com",
+        "url": "https://github.com/apopelo"
+    },
+    "maintainers": [
+        {
+            "name": "Andrey Popelo",
+            "email": "andrey@popelo.com",
+            "url": "https://github.com/apopelo"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://apopelo.mit-license.org"
+        }
+    ],
+    "bugs": "https://github.com/apopelo/jquery-hashchange/issues",
+    "homepage": "https://github.com/apopelo/jquery-hashchange",
+    "docs": "https://github.com/apopelo/jquery-hashchange#readme",
+    "download": "https://github.com/apopelo/jquery-hashchange/archive/master.zip",
+    "dependencies": {
+        "jquery": ">=1.4"
+    }
+}

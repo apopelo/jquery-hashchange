@@ -24,8 +24,8 @@
             return;
           }
 
-          var onRemove = $.hashchange.onRemove[$.hashchange.prevHash];
-          var onSet = $.hashchange.onSet[window.location.hash];
+          var onRemove = $.hashchange.onRemove[$.hashchange.prevHash],
+              onSet = $.hashchange.onSet[window.location.hash];
 
           if (onRemove) {
             onRemove();

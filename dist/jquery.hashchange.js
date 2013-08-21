@@ -1,3 +1,11 @@
+/*
+ *  jQuery Hashchange - v1.0.0
+ *  A plugin which allows to bind callbacks to custom window.location.hash (uri fragment id) values.
+ *  https://github.com/apopelo/jquery-hashchange
+ *
+ *  Made by Andrey Popelo
+ *  Under MIT License
+ */
 ;(function($) {
   var methods = {
     init: function(options) {
@@ -7,7 +15,7 @@
         "onRemove" : function(){}
       }, options);
 
-      if (!settings["hash"]) {
+      if (!settings.hash) {
         return this;
       }
 
@@ -18,18 +26,19 @@
         $.hashchange.onRemove = {};
         $.hashchange.prevHash = "";
 
-        $.hashchange.listener = function(event) {
+        $.hashchange.listener = function() {
           // if hash didn't change - do nothing
-          if (window.location.hash == $.hashchange.prevHash) {
+          if (window.location.hash === $.hashchange.prevHash) {
             return;
           }
 
-          var onRemove = $.hashchange.onRemove[$.hashchange.prevHash];
+          var onRemove = $.hashchange.onRemove[$.hashchange.prevHash],
+              onSet = $.hashchange.onSet[window.location.hash];
+
           if (onRemove) {
             onRemove();
           }
 
-          var onSet = $.hashchange.onSet[window.location.hash];
           if (onSet) {
             onSet();
           }
@@ -40,13 +49,13 @@
         this.bind("hashchange", $.hashchange.listener);
       }
 
-      $.hashchange.onSet[settings["hash"]] = settings["onSet"];
-      $.hashchange.onRemove[settings["hash"]] = settings["onRemove"];
+      $.hashchange.onSet[settings.hash] = settings.onSet;
+      $.hashchange.onRemove[settings.hash] = settings.onRemove;
 
       // fire hashchange if current hash equals given
       // and it is not already active
-      if (window.location.hash == settings["hash"]
-          && window.location.hash != $.hashchange.prevHash) {
+      if (window.location.hash === settings.hash &&
+          window.location.hash !== $.hashchange.prevHash) {
         $.hashchange.listener();
       }
 

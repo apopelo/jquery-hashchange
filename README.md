@@ -27,3 +27,5 @@ Example:
             $("#login-form").hide();
         },
     });
+
+See `demo/index.html` for a complete example.

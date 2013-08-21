@@ -24,7 +24,7 @@
                        http://.../#!/login/
                     2. Call onRemove() callback each time when url changes from
                        http://.../#!/login/ to anything else, e.g.
-                       http://.../#!/
+                       http://.../#!/ or http://.../
 
                 */
                 $(window).hashchange({
@@ -63,7 +63,7 @@
             <a href="#!/test2/">Go to #!/test2/</a>
         </p>
 
-        <p><small>You can also trigger all events manually by just changing the page url.</small></p>
+        <p><small>You can also trigger all events manually by just changing the hash part of the page url.</small></p>
 
         <form id="login-form" action="." style="display: none;">
             <p>

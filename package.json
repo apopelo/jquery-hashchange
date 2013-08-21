@@ -1,14 +1,14 @@
 {
     "name": "jquery-hashchange",
     "title": "jQuery Hashchange",
-    "description": "A plugin which allows to bind callbacks to custom window.location.hash values.",
+    "description": "A plugin which allows to bind callbacks to custom window.location.hash (uri fragment id) values.",
     "author": "Andrey Popelo",
     "repository": {
         "type" : "git",
         "url" : "http://github.com/apopelo/jquery-hashchange.git"
     },
     "homepage": "https://github.com/apopelo/jquery-hashchange/",
-    "version": "3.3.1",
+    "version": "1.0.0",
     "devDependencies": {
         "grunt": "~0.4.1",
         "grunt-cli": "~0.1.7",

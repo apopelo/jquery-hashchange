@@ -2,12 +2,12 @@
   var methods = {
     init: function(options) {
       var settings = $.extend({
-        'hash'     : "",
-        'onSet'    : function(){},
-        'onRemove' : function(){}
+        "hash"     : "",
+        "onSet"    : function(){},
+        "onRemove" : function(){}
       }, options);
 
-      if (!settings['hash']) {
+      if (!settings["hash"]) {
         return this;
       }
 
@@ -37,15 +37,15 @@
           $.hashchange.prevHash = window.location.hash;
         };
 
-        this.bind('hashchange', $.hashchange.listener);
+        this.bind("hashchange", $.hashchange.listener);
       }
 
-      $.hashchange.onSet[settings['hash']] = settings['onSet'];
-      $.hashchange.onRemove[settings['hash']] = settings['onRemove'];
+      $.hashchange.onSet[settings["hash"]] = settings["onSet"];
+      $.hashchange.onRemove[settings["hash"]] = settings["onRemove"];
 
       // fire hashchange if current hash equals given
       // and it is not already active
-      if (window.location.hash == settings['hash']
+      if (window.location.hash == settings["hash"]
           && window.location.hash != $.hashchange.prevHash) {
         $.hashchange.listener();
       }
@@ -56,7 +56,7 @@
 
   $.fn.hashchange = function(options) {
     // options array passed
-    if (Object.prototype.toString.call(options) === '[object Array]') {
+    if (Object.prototype.toString.call(options) === "[object Array]") {
       for (var i = options.length - 1; i >= 0; i--) {
         methods.init.apply(this, [options[i]]);
       }

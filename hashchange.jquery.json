@@ -1,11 +1,17 @@
 {
     "name": "hashchange",
-    "title": "jQuery Boilerplate",
-    "description": "A jump-start for jQuery plugins development.",
+    "title": "jQuery Hashchange",
+    "description": "A plugin which allows to bind callbacks to custom window.location.hash (uri fragment id) values.",
     "keywords": [
         "jquery",
+        "plugins",
         "hashchange",
-        "plugins"
+        "hash",
+        "event",
+        "callback",
+        "url",
+        "hashbang",
+        "fragment"
     ],
     "version": "1.0.0",
     "author": {

@@ -6,6 +6,7 @@ Simple and lightweight plugin which allows to bind callbacks to specific
 
 Example:
 
+```javascript
     /*
 
     Code below means:
@@ -27,5 +28,6 @@ Example:
             $("#login-form").hide();
         },
     });
+```
 
 See `demo/index.html` for a complete example.

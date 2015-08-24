@@ -7,27 +7,27 @@ Simple and lightweight plugin which allows to bind callbacks to specific
 Example:
 
 ```javascript
-    /*
+/*
 
-    Code below means:
+Code below means:
 
-        1. Call onSet() callback each time when url changes to
-           http://.../#!/login/
+    1. Call onSet() callback each time when url changes to
+       http://.../#!/login/
 
-        2. Call onRemove() callback each time when url changes from
-           http://.../#!/login/ to anything else, e.g.
-           http://.../#!/ or http://.../
+    2. Call onRemove() callback each time when url changes from
+       http://.../#!/login/ to anything else, e.g.
+       http://.../#!/ or http://.../
 
-    */
-    $(window).hashchange({
-        hash: "#!/login/",
-        onSet: function() {
-            $("#login-form").show();
-        },
-        onRemove: function() {
-            $("#login-form").hide();
-        },
-    });
+*/
+$(window).hashchange({
+    hash: "#!/login/",
+    onSet: function() {
+        $("#login-form").show();
+    },
+    onRemove: function() {
+        $("#login-form").hide();
+    },
+});
 ```
 
 See `demo/index.html` for a complete example.

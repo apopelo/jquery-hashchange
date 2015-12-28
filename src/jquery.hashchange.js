@@ -56,6 +56,12 @@
   };
 
   $.fn.hashchange = function(options) {
+    if (options === "prevHash" && arguments.length > 1)
+    {
+      $.hashchange.prevHash = arguments[1];
+      return this;
+    }
+
     // options array passed
     if (Object.prototype.toString.call(options) === "[object Array]") {
       for (var i = options.length - 1; i >= 0; i--) {
